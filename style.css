@@ -1,5 +1,5 @@
 :root {
-  --primary-color: blue;
+  --primary-color: rgb(0, 162, 255);
   --secondary-color: white;
   --bg-color: #ffffff;
   --font-size: 16px;
@@ -34,15 +34,27 @@ body {
   letter-spacing: 3px;
 }
 
+.white {
+  color: white;
+}
+
+.primary {
+  color: var(--primary-color);
+}
+
+.black {
+  color: black;
+}
+
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  height: 100px;
   width: 100%;
-  background-color: var(--bg-color);
   max-width: 1440px;
   margin: 0 auto;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: var(--bg-color);
   padding: 0 20px;
   border-bottom: 1px dashed var(--primary-color);
 
@@ -141,7 +153,7 @@ body {
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -226,10 +238,10 @@ body {
 .contact-section {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: var(--bg-color);
   gap: 40px;
@@ -239,6 +251,7 @@ body {
     flex-direction: column;
     gap: 20px;
     width: 100%;
+    padding: 50px 100px;
 
     > div {
       display: flex;
@@ -247,25 +260,35 @@ body {
       i {
         font-size: 40px;
       }
+
+      h1 {
+        font-family: sans-serif;
+        font-size: large;
+      }
     }
-    padding: 0 100px;
   }
 
   .contact-down {
-    gap: 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 20px;
     background-color: var(--primary-color);
-    padding: 0 100px;
+    padding: 25px 100px;
+
+    > h1 {
+      font-weight: 500;
+      font-size: 30px;
+    }
 
     > div {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 10px;
 
       h4 {
         color: rgb(255, 162, 0);
+        font-weight: 800;
       }
 
       p {
@@ -275,34 +298,70 @@ body {
   }
 
   .contact-form {
-    width: 100%;
-    height: 100%;
+    width: 50%;
     position: absolute;
-    right: 100px;
-    top: 0;
+    right: 120px;
+    top: 50px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
+    background-color: rgb(208, 219, 219);
+    padding: 25px;
+    border-radius: 12px;
 
     .form-head {
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-bottom: 50px;
     }
 
     .form {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 10px;
       align-items: center;
       justify-content: center;
+      width: 100%;
 
       > div {
+        width: 100%;
         display: flex;
         justify-content: space-between;
         gap: 5px;
+
+        label {
+          font-weight: 800;
+        }
+
+        textarea,
+        input {
+          width: 65%;
+          padding: 8px;
+          border-radius: 5px;
+          outline: none;
+          border: none;
+          font-family: "Courier New", Courier, monospace;
+        }
+      }
+      > button {
+        align-self: flex-end;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid #fff;
+        background-color: var(--primary-color);
+        padding: 10px 30px;
       }
     }
   }
 }
+
+/* .footer {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
