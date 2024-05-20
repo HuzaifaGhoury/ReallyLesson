@@ -1,0 +1,154 @@
+:root {
+  --primary-color: blue;
+  --secondary-color: white;
+  --bg-color: #ffffff;
+  --font-size: 16px;
+  --spacing: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  background-color: var(--bg-color);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  nav {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      position: relative;
+      width: 60%;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      .logo {
+        height: 60px;
+        width: 130px;
+        cursor: pointer;
+      }
+
+      .search-bar {
+        width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 5px 15px;
+        background-color: #fff;
+        border-radius: 50px;
+        border: 1px solid black;
+
+        .search {
+          width: 300px;
+          height: 40px;
+          border: none;
+          outline: none;
+        }
+
+        .ri-search-line {
+          font-size: 20px;
+          color: red;
+        }
+      }
+    }
+
+    .right {
+      position: relative;
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 150px;
+
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-between;
+        width: 65%;
+      }
+
+      .buttons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .ri-shopping-cart-fill {
+          font-size: 40px;
+          cursor: pointer;
+          color: blue;
+        }
+
+        button {
+          height: 40px;
+          width: 100px;
+          border: none;
+          background-color: blue;
+          color: var(--secondary-color);
+          font-weight: bold;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  /* height: calc(100vh - 100px); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+
+  .img {
+    width: 50%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .text {
+    width: 50%;
+    height: 100%;
+
+    .coloured-title {
+      color: blue;
+    }
+
+    .title {
+      font-size: 50px;
+    }
+  }
+}
