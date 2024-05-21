@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -11,153 +12,257 @@
     <title>ReallyLesson - Homepage</title>
   </head>
   <body>
-    <!-- Header Section -->
-    <header class="header">
-      <nav id="navbar">
-        <!-- nav left section -->
-        <div class="left">
-          <!-- logo -->
-          <img
-            class="logo"
-            onclick="window.location.href='#home'"
-            src="assets/logo.png"
-            alt="logo"
-          />
-
-          <!-- search -->
-          <div class="search-bar">
-            <input
-              class="search"
-              type="search"
-              placeholder="Search in ReallyLesson"
+    <div class="container">
+      <!-- Header Section -->
+      <header class="header">
+        <nav id="navbar">
+          <!-- nav left section -->
+          <div class="left">
+            <!-- logo -->
+            <img
+              class="logo"
+              onclick="window.location.href='#home'"
+              src="assets/logo.png"
+              alt="logo"
             />
-            <i class="ri-search-line"></i>
+
+            <!-- search -->
+            <div class="search-bar">
+              <input
+                class="search"
+                type="search"
+                placeholder="Search in ReallyLesson"
+              />
+              <i class="ri-search-line"></i>
+            </div>
+          </div>
+
+          <!-- nav right section -->
+          <div class="right">
+            <div class="links">
+              <a href="#packages">Packages</a>
+              <a href="#about">About</a>
+              <a href="#contact">Contact Us </a>
+            </div>
+            <div class="buttons">
+              <div class="cart-btn"><i class="ri-shopping-cart-fill"></i></div>
+              <button class="login-btn">Login</button>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <section id="home" class="hero-section section">
+        <video class="background-video" autoplay muted loop playsinline>
+          <source src="assets/video_background.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Hero Section Chatbot img -->
+        <div class="hero-img">
+          <img src="assets/chatbot.png" alt="Chatbot Image" loading="lazy" />
+        </div>
+
+        <!-- Hero Section Text -->
+        <div class="hero-text">
+          <div>
+            <h1 class="title coloured-title">CHATBOT</h1>
+            <h1 class="title">FOR YOU</h1>
+          </div>
+
+          <div>
+            <p class="hero-para">
+              By combining our art of conversational flow design with our
+              science of <br />
+              generating chatbots without coding skills, we handcraft the best
+              <br />
+              chatbots that will astound your users.
+            </p>
+            <!-- <button class="get-started-btn">Get Started</button> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Packages Section -->
+      <section id="packages" class="packages-section section">
+        <h1 class="title">Packages</h1>
+
+        <div class="package-wrapper">
+          <div class="card">
+            <div class="card-head">
+              <h1>Package Creation Test</h1>
+            </div>
+
+            <div class="card-body">
+              <div class="card-img">
+                <img src="/assets/Annotation.png" alt="image" loading="lazy" />
+              </div>
+
+              <p>
+                What's special about your services or offerings? Give your
+                audience a reason to choose you over your competition. Cite it
+                above, then flesh it out here.
+              </p>
+
+              <h4>SGD 100</h4>
+
+              <button data-modal-target="#modal">CLICK FOR MORE DETAILS</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-head">
+              <h1>Package Creation Test</h1>
+            </div>
+
+            <div class="card-body">
+              <div class="card-img">
+                <img src="/assets/Annotation2.png" alt="image" loading="lazy" />
+              </div>
+
+              <p>
+                What's special about your services or offerings? Give your
+                audience a reason to choose you over your competition. Cite it
+                above, then flesh it out here.
+              </p>
+
+              <h4>SGD 100</h4>
+
+              <button>CLICK FOR MORE DETAILS</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-head">
+              <h1>Package Creation Test</h1>
+            </div>
+
+            <div class="card-body">
+              <div class="card-img">
+                <img src="/assets/Annotation.png" alt="image" loading="lazy" />
+              </div>
+
+              <p>
+                What's special about your services or offerings? Give your
+                audience a reason to choose you over your competition. Cite it
+                above, then flesh it out here.
+              </p>
+
+              <h4>SGD 100</h4>
+
+              <button>CLICK FOR MORE DETAILS</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-head">
+              <h1>Package Creation Test</h1>
+            </div>
+
+            <div class="card-body">
+              <div class="card-img">
+                <img src="/assets/Annotation2.png" alt="image" loading="lazy" />
+              </div>
+
+              <p>
+                What's special about your services or offerings? Give your
+                audience a reason to choose you over your competition. Cite it
+                above, then flesh it out here.
+              </p>
+
+              <h4>SGD 100</h4>
+
+              <button>CLICK FOR MORE DETAILS</button>
+            </div>
           </div>
         </div>
 
-        <!-- nav right section -->
+        <i class="ri-arrow-left-fill nav-button prev-button"></i>
+        <i class="ri-arrow-right-fill nav-button next-button"></i>
+      </section>
+
+      <!-- Contact Us Section -->
+      <section id="contact" class="contact-section section">
+        <div class="left">
+          <div class="contact-up">
+            <h1 class="primary">Contact Us</h1>
+
+            <div><i class="ri-phone-fill"></i> (123) 456-7890</div>
+
+            <div>
+              <i class="ri-mail-fill"></i>
+              <a class="black" href="mailto:K5mzZ@example.com"
+                >hello@gmail.com</a
+              >
+            </div>
+          </div>
+
+          <div class="contact-down">
+            <h1 class="white">Office Hours</h1>
+
+            <div>
+              <h4>Monday to Friday</h4>
+              <p>9:00 am to 6:00 pm</p>
+            </div>
+            <div>
+              <h4>Saturday</h4>
+              <p>9:00 am to 12 noon</p>
+            </div>
+            <div>
+              <h4>Closed on Sundays</h4>
+            </div>
+          </div>
+        </div>
+
         <div class="right">
-          <div class="links">
-            <a href="#packages">Packages</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact Us </a>
+          <div class="form-head">
+            <h1 class="primary">Send us a message</h1>
+
+            <img class="logo" src="assets/logo.png" alt="logo" />
           </div>
-          <div class="buttons">
-            <div class="cart-btn"><i class="ri-shopping-cart-fill"></i></div>
-            <button class="login-btn">Login</button>
-          </div>
+          <form class="form">
+            <div>
+              <label for="name">Name:</label>
+              <input type="text" />
+            </div>
+
+            <div>
+              <label for="email">Email Address: </label>
+              <input type="email" />
+            </div>
+
+            <div>
+              <label for="message">Message:</label>
+              <textarea name="message" id="message" rows="15"></textarea>
+            </div>
+            <button type="submit" class="white">SEND</button>
+          </form>
         </div>
-      </nav>
-    </header>
+      </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section section">
-      <video class="background-video" autoplay muted loop playsinline>
-        <source src="assets/video_background.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <!-- About Section -->
 
-      <!-- Hero Section Chatbot img -->
-      <div class="hero-img">
-        <img src="assets/chatbot.png" alt="Chatbot Image" loading="lazy" />
-        <div class="border"></div>
-      </div>
-
-      <!-- Hero Section Text -->
-      <div class="hero-text">
-        <div>
-          <h1 class="title coloured-title">CHATBOT</h1>
-          <h1 class="title">FOR YOU</h1>
-        </div>
-
-        <div>
-          <p class="hero-para">
-            By combining our art of conversational flow design with our science
-            of <br />
-            generating chatbots without coding skills, we handcraft the best
-            <br />
-            chatbots that will astound your users.
-          </p>
-          <!-- <button class="get-started-btn">Get Started</button> -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Packages Section -->
-    <!-- <section id="packages" class="packages-section section">
-      <h1 class="title">Packages</h1>
-      <div class="packages">lorem500000</div>
-    </section> -->
-
-    <!-- Contact Us Section -->
-    <section id="contact" class="contact-section section">
-      <div class="contact-up">
-        <h1 class="primary">Contact Us</h1>
-
-        <div><i class="ri-phone-fill"></i> (123) 456-7890</div>
-
-        <div>
-          <i class="ri-mail-fill"></i>
-          <a class="black" href="mailto:K5mzZ@example.com">hello@gmail.com</a>
-        </div>
-      </div>
-
-      <div class="contact-down">
-        <h1 class="white">Office Hours</h1>
-
-        <div>
-          <h4>Monday to Friday</h4>
-          <p>9:00 am to 6:00 pm</p>
-        </div>
-        <div>
-          <h4>Saturday</h4>
-          <p>9:00 am to 12 noon</p>
-        </div>
-        <div>
-          <h4>Closed on Sundays</h4>
-        </div>
-      </div>
-
-      <div class="contact-form">
-        <div class="form-head">
-          <h1 class="primary">Send us a message</h1>
-
-          <img class="logo" src="assets/logo.png" alt="logo" />
-        </div>
-        <form class="form">
+      <!-- Footer Section -->
+      <footer class="footer">
+        <div class="left">
+          <h3 class="white">Follow us online</h3>
           <div>
-            <label for="name">Name:</label>
-            <input type="text" />
+            <i class="ri-facebook-fill"></i>
+            <i class="ri-twitter-fill"></i>
+            <i class="ri-instagram-line"></i>
           </div>
-
-          <div>
-            <label for="email">Email Address: </label>
-            <input type="email" />
-          </div>
-
-          <div>
-            <label for="message">Message:</label>
-            <textarea name="message" id="message" rows="15"></textarea>
-          </div>
-          <button type="submit" class="white">SEND</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- About Section -->
-
-    <!-- Footer Section -->
-    <!-- <footer class="footer">
-      <div class="left">
-        <h3>Follow us online</h3>
-        <div>
-          <i></i>
         </div>
+        <div class="right">
+          <img src="assets/Annotation.png" alt="img" />
+        </div>
+      </footer>
+    </div>
+
+    <div class="modal-overlay">
+      <div class="modal">
+        <button class="close-modal">Close</button>
+        <!-- Modal content goes here -->
+        Hi
       </div>
-      <div class="right">
-        <img src="assets/Annotation.png" alt="img" />
-      </div>
-    </footer> -->
+    </div>
 
     <script src="script.js"></script>
   </body>
