@@ -17,7 +17,7 @@
         <!-- nav left section -->
         <div class="left">
           <!-- logo -->
-          <img class="logo" src="images/logo.png" alt="logo" />
+          <img class="logo" src="assets/logo.png" alt="logo" />
 
           <!-- search -->
           <div class="search-bar">
@@ -46,14 +46,42 @@
     </header>
 
     <!-- Hero Section -->
-    <div class="hero-section">
-      <div class="img">
-        <img src="images/chatbot.png" alt="img" />
+    <section class="hero-section">
+      <video class="background-video" autoplay muted loop playsinline>
+        <source src="assets/video_background.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Hero Section Chatbot img -->
+      <div class="hero-img">
+        <img src="assets/chatbot.png" alt="Chatbot Image" loading="lazy" />
+        <div class="border"></div>
       </div>
-      <div class="text">
-        <h1 class="title coloured-title">CHATBOT</h1>
-        <h1 class="title">FOR YOU</h1>
+
+      <!-- Hero Section Text -->
+      <div class="hero-text">
+        <div>
+          <h1 class="title coloured-title">CHATBOT</h1>
+          <h1 class="title">FOR YOU</h1>
+        </div>
+
+        <div>
+          <p class="hero-para">
+            By combining our art of conversational flow design with our science
+            of <br />
+            generating chatbots without coding skills, we handcraft the best
+            <br />
+            chatbots that will astound your users.
+          </p>
+          <!-- <button class="get-started-btn">Get Started</button> -->
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section">
+      <h1 class="title">Packages</h1>
+      <div class="packages"></div>
+    </section>
   </body>
 </html>
