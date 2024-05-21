@@ -8,12 +8,12 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <title>Homepage</title>
+    <title>ReallyLesson - Homepage</title>
   </head>
   <body>
     <!-- Header Section -->
     <header class="header">
-      <nav>
+      <nav id="navbar">
         <!-- nav left section -->
         <div class="left">
           <!-- logo -->
@@ -33,9 +33,9 @@
         <!-- nav right section -->
         <div class="right">
           <div class="links">
-            <a href="/packages.html">Packages</a>
-            <a href="/about.html">About</a>
-            <a href="/contact.html">Contact Us </a>
+            <a href="#packages">Packages</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact Us </a>
           </div>
           <div class="buttons">
             <div class="cart-btn"><i class="ri-shopping-cart-fill"></i></div>
@@ -46,7 +46,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section id="home" class="hero-section section">
       <video class="background-video" autoplay muted loop playsinline>
         <source src="assets/video_background.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -79,9 +79,76 @@
     </section>
 
     <!-- Packages Section -->
-    <section class="packages-section">
+    <!-- <section id="packages" class="packages-section section">
       <h1 class="title">Packages</h1>
-      <div class="packages"></div>
+      <div class="packages">lorem500000</div>
+    </section> -->
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section section">
+      <div class="contact-up">
+        <h1 class="title coloured-title">Contact Us</h1>
+
+        <div><i class="ri-phone-fill"></i> (123) 456-7890</div>
+
+        <div>
+          <i class="ri-mail-fill"></i>
+          <a href="mailto:K5mzZ@example.com">hello@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contact-down">
+        <h1 class="title">Office Hours</h1>
+
+        <div>
+          <h4>Monday to Friday</h4>
+          <p>9:00 am to 6:00 pm</p>
+        </div>
+        <div>
+          <h4>Saturday</h4>
+          <p>9:00 am to 12 noon</p>
+        </div>
+        <div>
+          <h4>Closed on Sundays</h4>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-head">
+          <h1 class="">Send us a message</h1>
+
+          <img class="logo" src="assets/logo.png" alt="logo" />
+        </div>
+        <form class="form">
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" placeholder="Name" />
+          </div>
+
+          <div>
+            <label for="email">Email Address: </label>
+            <input type="email" placeholder="Email" />
+          </div>
+
+          <div>
+            <label for="message">Message: </label>
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Message"
+            ></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </section>
+
+    <!-- About Section -->
+
+    <!-- Footer Section -->
+
+    <script src="script.js"></script>
   </body>
 </html>
