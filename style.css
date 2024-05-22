@@ -33,7 +33,7 @@ body {
 }
 
 .coloured-title {
-  color: blue;
+  color: #1486e3;
   line-height: 1.6;
 }
 
@@ -48,7 +48,7 @@ body {
 }
 
 .primary {
-  color: var(--primary-color);
+  color: rgb(20, 134, 227);
 }
 
 .black {
@@ -156,7 +156,7 @@ body {
             height: 40px;
             width: 100px;
             border: none;
-            background-color: blue;
+            background-color: rgb(24, 138, 232);
             color: var(--secondary-color);
             font-weight: bold;
             border-radius: 5px;
@@ -358,7 +358,7 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    background: linear-gradient(white 50%, blue 50%);
+    background: linear-gradient(white 50%, #1486e3 50%);
     padding: 0 120px;
     flex-grow: 1;
 

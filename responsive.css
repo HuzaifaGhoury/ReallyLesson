@@ -6,6 +6,7 @@
   --spacing: 8px;
 }
 
+/* FOR normal DESKTOP/Laptops  */
 @media (max-width: 1200px) {
   .container {
     .header {
@@ -46,8 +47,26 @@
       }
     }
 
-    .hero-section .hero-text {
-      padding: 10px 50px;
+    .hero-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+
+      .hero-text {
+        width: 50%;
+        padding: 10px 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        z-index: 2;
+
+        .hero-para {
+          font-size: 13px;
+          line-height: 2;
+          letter-spacing: 1.2px;
+        }
+      }
     }
 
     .packages-section .package-wrapper {
@@ -64,10 +83,9 @@
 /* Tablets and smaller desktops */
 @media (max-width: 992px) {
   .container {
-    padding: 0;
     .header {
       padding: 0;
-      height: 80px;
+      height: 90px;
 
       nav {
         .left {
@@ -212,14 +230,41 @@
         }
       }
     }
-  }
 
-  .header nav .left .search-bar {
-    width: 300px;
-  }
+    .hero-section {
+      margin-top: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
 
-  .hero-section .hero-text {
-    padding: 10px 30px;
+      .hero-img {
+        width: 40%;
+      }
+
+      .hero-text {
+        width: 60%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        gap: 40px;
+
+        > div > h1 {
+          font-size: 60px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          line-height: 1.2;
+        }
+
+        .hero-para {
+          width: 80%;
+          font-size: 13px;
+          line-height: 1.3;
+          letter-spacing: normal;
+        }
+      }
+    }
   }
 
   .packages-section .package-wrapper .card {
@@ -235,11 +280,39 @@
 
 /* Tablets and smaller desktops */
 @media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column;
-    .hero-img,
-    .hero-text {
-      width: 100%;
+  .container {
+    .header {
+      height: 80px;
+    }
+
+    .hero-section {
+      margin-top: 80px;
+
+      .hero-img {
+        width: 45%;
+      }
+
+      .hero-text {
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        gap: 20px;
+        margin-left: -20px;
+
+        > div > h1 {
+          font-size: 40px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          line-height: 1.1;
+        }
+
+        .hero-para {
+          width: 90%;
+          font-size: 10px;
+          line-height: 1.2;
+        }
+      }
     }
   }
 
@@ -263,7 +336,6 @@
     .header {
       padding-left: 15px;
       height: 60px;
-      border-bottom: 1px solid var(--primary-color);
 
       nav {
         .left {
@@ -286,19 +358,45 @@
         }
       }
     }
-  }
 
-  .header nav .right .buttons button {
-    width: 80px;
-    font-size: 12px;
+    .hero-section {
+      margin-top: 60px;
+
+      .hero-img {
+        display: none;
+      }
+
+      .hero-text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        gap: 25px;
+        margin: 0;
+        padding: 40px;
+
+        > div > h1 {
+          font-size: 40px;
+          font-weight: 600;
+          letter-spacing: 2px;
+          line-height: 1.2;
+          text-align: center;
+        }
+
+        .hero-para {
+          width: 95%;
+          margin: 0 auto;
+          text-align: center;
+          font-size: 12px;
+          line-height: 1.3;
+          font-weight: normal;
+        }
+      }
+    }
   }
 
   .hero-section {
     margin-top: 60px;
-  }
-
-  .hero-section .hero-text {
-    padding: 10px;
   }
 
   .packages-section {
@@ -342,8 +440,140 @@
 
 /* Very small devices (extra small phones) */
 @media (max-width: 375px) {
-  .header nav .left .search-bar {
-    width: 150px;
+  .container {
+    .header {
+      padding-left: 5px;
+      height: 60px;
+
+      nav {
+        .left {
+          .logo {
+            height: 40px;
+            width: 90px;
+          }
+        }
+
+        #menutoggle {
+          top: 20px;
+          right: 15px;
+
+          #menu {
+            width: 320px;
+          }
+        }
+
+        #menutoggle input {
+          width: 40px;
+          height: 33px;
+          top: -7px;
+          right: -5px;
+        }
+
+        #menutoggle span {
+          width: 20px;
+          height: 3px;
+          margin-bottom: 4px;
+          transform-origin: -2px 1px;
+        }
+
+        #menutoggle span:first-child {
+          transform-origin: 0% 0%;
+        }
+
+        #menutoggle span:nth-last-child(2) {
+          transform-origin: 0% 100%;
+        }
+
+        #menutoggle input:checked ~ span {
+          opacity: 1;
+          transform: rotate(45deg) translate(-2px, -1px);
+          background: #232323;
+        }
+
+        #menutoggle input:checked ~ span:nth-last-child(3) {
+          opacity: 0;
+          transform: rotate(0deg) scale(0.2, 0.2);
+        }
+
+        #menutoggle input:checked ~ span:nth-last-child(2) {
+          transform: rotate(-45deg) translate(0, -1px);
+        }
+
+        #menu {
+          padding: 50px;
+          transform-origin: 100% 0%;
+          transform: translate(100%, 0);
+        }
+
+        #menu li {
+          padding: 10px 0;
+          font-size: 22px;
+        }
+
+        .buttons {
+          margin-top: 20px;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .cart-btn,
+        .login-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #232323;
+          color: #ededed;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+
+        .cart-btn i {
+          font-size: 20px;
+        }
+
+        .login-btn {
+          background: tomato;
+        }
+      }
+    }
+
+    .hero-section {
+      margin-top: 60px;
+
+      .hero-img {
+        display: none;
+      }
+
+      .hero-text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        gap: 25px;
+        margin: 0;
+        padding: 40px;
+
+        > div > h1 {
+          font-size: 40px;
+          font-weight: 600;
+          letter-spacing: 2px;
+          line-height: 1.2;
+          text-align: center;
+        }
+
+        .hero-para {
+          width: 95%;
+          margin: 0 auto;
+          text-align: center;
+          font-size: 12px;
+          line-height: 1.3;
+          font-weight: normal;
+        }
+      }
+    }
   }
 
   .header nav .right .buttons .ri-shopping-cart-fill {
