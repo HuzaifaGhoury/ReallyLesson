@@ -205,19 +205,17 @@ body {
     }
 
     .hero-img {
-      width: 50%;
+      width: 40%;
       height: 100%;
       z-index: 1;
 
       img {
-        width: 100%;
-        height: 100%;
+        width: 90%;
       }
     }
 
     .hero-text {
-      width: 50%;
-      /* height: 100%; */
+      width: 60%;
       padding: 10px 100px;
       display: flex;
       flex-direction: column;
@@ -225,6 +223,7 @@ body {
       z-index: 2;
 
       .hero-para {
+        width: 75%;
         font-size: 13px;
         line-height: 2;
         letter-spacing: 1.2px;

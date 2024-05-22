@@ -463,7 +463,7 @@
         }
 
         #menutoggle input {
-          width: 40px;
+          width: 30px;
           height: 33px;
           top: -7px;
           right: -5px;
@@ -476,27 +476,16 @@
           transform-origin: -2px 1px;
         }
 
-        #menutoggle span:first-child {
-          transform-origin: 0% 0%;
-        }
-
-        #menutoggle span:nth-last-child(2) {
-          transform-origin: 0% 100%;
-        }
-
         #menutoggle input:checked ~ span {
           opacity: 1;
           transform: rotate(45deg) translate(-2px, -1px);
           background: #232323;
         }
 
-        #menutoggle input:checked ~ span:nth-last-child(3) {
-          opacity: 0;
-          transform: rotate(0deg) scale(0.2, 0.2);
-        }
-
-        #menutoggle input:checked ~ span:nth-last-child(2) {
-          transform: rotate(-45deg) translate(0, -1px);
+        #menutoggle input:checked {
+          height: 33px;
+          top: -7px;
+          right: -1px;
         }
 
         #menu {
@@ -554,10 +543,10 @@
         z-index: 2;
         gap: 25px;
         margin: 0;
-        padding: 40px;
+        padding: 20px 40px;
 
         > div > h1 {
-          font-size: 40px;
+          font-size: 30px;
           font-weight: 600;
           letter-spacing: 2px;
           line-height: 1.2;
@@ -568,7 +557,146 @@
           width: 95%;
           margin: 0 auto;
           text-align: center;
-          font-size: 12px;
+          font-size: 10px;
+          line-height: 1.3;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  .header nav .right .buttons .ri-shopping-cart-fill {
+    font-size: 30px;
+  }
+
+  .packages-section .package-wrapper .card {
+    padding: 10px;
+  }
+
+  .contact-section .left .contact-up > h1,
+  .contact-section .left .contact-down > h1 {
+    font-size: 30px;
+  }
+
+  .contact-section .left .contact-up > div h1,
+  .contact-section .left .contact-down > div p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 250px) {
+  .container {
+    .header {
+      padding-left: 5px;
+      height: 60px;
+
+      nav {
+        .left {
+          .logo {
+            height: 40px;
+            width: 90px;
+          }
+        }
+
+        #menutoggle {
+          top: 20px;
+          right: 15px;
+
+          #menu {
+            width: 320px;
+          }
+        }
+
+        #menutoggle input {
+          width: 30px;
+          height: 33px;
+          top: -7px;
+          right: -5px;
+        }
+
+        #menutoggle span {
+          width: 20px;
+          height: 3px;
+          margin-bottom: 4px;
+          transform-origin: -2px 1px;
+        }
+
+        #menutoggle input:checked ~ span {
+          opacity: 1;
+          transform: rotate(45deg) translate(-2px, -1px);
+          background: #232323;
+        }
+
+        #menutoggle input:checked {
+          height: 33px;
+          top: -7px;
+          right: -1px;
+        }
+
+        #menu {
+          padding: 50px;
+          transform-origin: 100% 0%;
+          transform: translate(100%, 0);
+        }
+
+        #menu li {
+          padding: 10px 0;
+          font-size: 22px;
+        }
+
+        .buttons {
+          margin-top: 20px;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .cart-btn,
+        .login-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #232323;
+          color: #ededed;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+
+        .cart-btn i {
+          font-size: 20px;
+        }
+
+        .login-btn {
+          background: tomato;
+        }
+      }
+    }
+
+    .hero-section {
+      .hero-text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        gap: 25px;
+        margin: 0;
+        padding: 20px 20px;
+
+        > div > h1 {
+          font-size: 25px;
+          font-weight: 600;
+          letter-spacing: 2px;
+          line-height: 1.2;
+          text-align: center;
+        }
+
+        .hero-para {
+          width: 95%;
+          margin: 0 auto;
+          text-align: center;
+          font-size: 10px;
           line-height: 1.3;
           font-weight: normal;
         }
