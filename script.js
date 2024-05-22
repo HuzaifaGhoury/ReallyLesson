@@ -144,7 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Ensure the script runs after the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   // GSAP timeline
   const tl = gsap.timeline({ defaults: { duration: 1, ease: "power1.out" } });
@@ -160,8 +159,8 @@ document.addEventListener("DOMContentLoaded", () => {
     { y: 50, opacity: 0, stagger: 0.2 },
     "-=0.5"
   )
-    .from(".hero-section .hero-para", { y: 50, opacity: 0 }, "-=0.5")
-    .from(".hero-section .hero-img", { scale: 0.5, opacity: 0 }, "-=0.5");
+    .from(".hero-section .hero-img", { scale: 0.5, opacity: 0 }, "-=0.5")
+    .from(".hero-section .hero-para", { y: 50, opacity: 0 }, "-=0.5");
 
   // Animate packages section title and cards
   tl.from(".packages-section .title", { y: 50, opacity: 0 }, "-=0.5").from(
@@ -188,4 +187,17 @@ document.addEventListener("DOMContentLoaded", () => {
       "-=0.5"
     )
     .from(".contact-section .right button", { y: 50, opacity: 0 }, "-=0.5");
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const checkbox = document.getElementById("menu-checkbox");
+  const menuLinks = document.querySelectorAll(
+    "#menu a, .buttons .cart-btn, .buttons .login-btn"
+  );
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      checkbox.checked = false;
+    });
+  });
 });
