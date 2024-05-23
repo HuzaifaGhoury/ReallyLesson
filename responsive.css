@@ -10,7 +10,7 @@
 @media (max-width: 1200px) {
   .container {
     .header {
-      width: 100vw;
+      width: 100%;
       padding: 0 10px;
 
       nav {
@@ -61,6 +61,12 @@
         gap: 60px;
         z-index: 2;
 
+        > div > h1 {
+          font-size: 65px;
+          letter-spacing: 2px;
+          line-height: 1.3;
+        }
+
         .hero-para {
           font-size: 13px;
           line-height: 2;
@@ -69,9 +75,39 @@
       }
     }
 
-    .packages-section .package-wrapper {
+    .packages-section {
+      padding: 50px 60px;
+      display: flex;
       flex-direction: column;
       gap: 20px;
+
+      .package-wrapper {
+        gap: 10px;
+
+        .card {
+          .card-head {
+            h1 {
+              font-size: 20px;
+              font-weight: 600;
+            }
+          }
+
+          .card-body {
+            p {
+              font-size: 14px;
+            }
+
+            h4 {
+              font-weight: 600;
+            }
+
+            button {
+              padding: 15px 20px;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
     }
 
     .contact-section {
@@ -265,16 +301,48 @@
         }
       }
     }
-  }
 
-  .packages-section .package-wrapper .card {
-    min-width: 45%;
-    width: 45%;
-  }
+    .packages-section {
+      gap: 30px;
 
-  .contact-section {
-    flex-direction: column;
-    padding: 0 40px;
+      .package-wrapper {
+        gap: 10px;
+
+        .card {
+          width: 31%;
+          gap: 30px;
+
+          .card-head {
+            h1 {
+              font-size: 25px;
+            }
+          }
+
+          .card-body {
+            padding: 20px;
+            gap: 10px;
+            border-radius: 20px;
+
+            p {
+              font-size: 14px;
+            }
+
+            h4 {
+              font-weight: 600;
+            }
+
+            button {
+              padding: 10px 0;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .contact-section {
+      padding: 0 50px;
+    }
   }
 }
 
@@ -314,19 +382,135 @@
         }
       }
     }
-  }
 
-  .packages-section {
-    padding: 20px;
-  }
+    .packages-section {
+      gap: 20px;
+      padding: 20px 60px;
 
-  .packages-section .package-wrapper .card {
-    min-width: 100%;
-    width: 100%;
-  }
+      > h1 {
+        font-size: 50px;
+        letter-spacing: 2px;
+      }
 
-  .contact-section {
-    padding: 20px;
+      .package-wrapper {
+        padding: 10px;
+
+        .single-card {
+          width: 80%;
+          margin: auto;
+          gap: 60px;
+          padding: 10px 50px;
+
+          .card-head {
+            h1 {
+              font-size: 30px;
+              font-weight: 500;
+              color: #000;
+            }
+          }
+
+          .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: space-between;
+            padding: 20px;
+            gap: 25px;
+            border-radius: 20px;
+
+            button {
+              width: 100%;
+              padding: 10px 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .contact-section {
+      flex-direction: column;
+      padding: 0 30px;
+
+      .left {
+        padding: 20px 10px;
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: start;
+        gap: 10px;
+
+        .contact-up {
+          width: 50%;
+          gap: 10px;
+
+          > h1 {
+            font-size: 30px;
+          }
+
+          > div {
+            h1 {
+              font-size: 30px;
+            }
+          }
+        }
+
+        .contact-down {
+          width: 50%;
+          gap: 10px;
+
+          > h1 {
+            font-size: 40px;
+            color: #000;
+          }
+
+          > div {
+            gap: 1px;
+
+            p {
+              color: #000;
+            }
+          }
+        }
+      }
+
+      .right {
+        width: 100%;
+        margin-top: 5px;
+        gap: 25px;
+        padding: 25px;
+        border-radius: 15px;
+
+        .form-head {
+          h1 {
+            font-size: 25px;
+            font-weight: 500;
+          }
+        }
+
+        .form {
+          gap: 15px;
+
+          > div {
+            label {
+              font-weight: 800;
+            }
+
+            textarea,
+            input {
+              padding: 5px;
+            }
+
+            input {
+              height: 25px;
+            }
+          }
+
+          > button {
+            padding: 10px 50px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -393,34 +577,66 @@
         }
       }
     }
-  }
 
-  .hero-section {
-    margin-top: 60px;
-  }
+    .packages-section {
+      padding: 25px 20px;
 
-  .packages-section {
-    padding: 10px;
-    gap: 10px;
-  }
+      .package-wrapper {
+        .single-card {
+          width: 100%;
+          padding: 20px;
+          gap: 60px;
 
-  .packages-section .package-wrapper {
-    flex-direction: column;
-  }
+          .card-head {
+            h1 {
+              font-size: 25px;
+            }
+          }
 
-  .packages-section .package-wrapper .card {
-    min-width: 100%;
-    width: 100%;
-  }
+          .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            gap: 25px;
 
-  .contact-section {
-    flex-direction: column;
-    padding: 10px;
-  }
+            .full-text {
+              display: none;
+            }
+            .short-text {
+              display: block;
+            }
 
-  .contact-section .left,
-  .contact-section .right {
-    width: 100%;
+            button {
+              padding: 10px 20px;
+            }
+          }
+        }
+      }
+
+      .nav-button {
+        position: absolute;
+        top: 62%;
+        transform: translateY(-50%);
+        width: 50px;
+
+        img {
+          width: 35px;
+          height: 35px;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .prev-button {
+        left: 3px;
+      }
+
+      .next-button {
+        right: 3px;
+      }
+    }
   }
 
   .footer {
@@ -563,27 +779,62 @@
         }
       }
     }
-  }
 
-  .header nav .right .buttons .ri-shopping-cart-fill {
-    font-size: 30px;
-  }
+    .packages-section {
+      padding: 20px 5px;
 
-  .packages-section .package-wrapper .card {
-    padding: 10px;
-  }
+      .package-wrapper {
+        .single-card {
+          padding: 20px;
+          gap: 35px;
 
-  .contact-section .left .contact-up > h1,
-  .contact-section .left .contact-down > h1 {
-    font-size: 30px;
-  }
+          .card-head {
+            h1 {
+              font-size: 25px;
+            }
+          }
 
-  .contact-section .left .contact-up > div h1,
-  .contact-section .left .contact-down > div p {
-    font-size: 12px;
+          .card-body {
+            padding: 15px;
+            gap: 25px;
+
+            button {
+              padding: 15px 10px;
+            }
+          }
+        }
+
+        .highlight {
+          scale: 1;
+        }
+      }
+
+      .nav-button {
+        position: absolute;
+        top: 62%;
+        transform: translateY(-50%);
+        width: 50px;
+
+        img {
+          width: 35px;
+          height: 35px;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .prev-button {
+        left: 3px;
+      }
+
+      .next-button {
+        right: 3px;
+      }
+    }
   }
 }
 
+/* EVEN SMALL DEVICES - Extra small devices (phones) */
 @media (max-width: 250px) {
   .container {
     .header {
@@ -686,7 +937,6 @@
 
         > div > h1 {
           font-size: 25px;
-          font-weight: 600;
           letter-spacing: 2px;
           line-height: 1.2;
           text-align: center;
@@ -694,31 +944,63 @@
 
         .hero-para {
           width: 95%;
-          margin: 0 auto;
-          text-align: center;
           font-size: 10px;
           line-height: 1.3;
           font-weight: normal;
         }
       }
     }
-  }
 
-  .header nav .right .buttons .ri-shopping-cart-fill {
-    font-size: 30px;
-  }
+    .packages-section {
+      padding: 20px 5px;
 
-  .packages-section .package-wrapper .card {
-    padding: 10px;
-  }
+      .package-wrapper {
+        .single-card {
+          padding: 12px;
+          gap: 12px;
 
-  .contact-section .left .contact-up > h1,
-  .contact-section .left .contact-down > h1 {
-    font-size: 30px;
-  }
+          .card-head {
+            h1 {
+              font-size: 25px;
+            }
+          }
 
-  .contact-section .left .contact-up > div h1,
-  .contact-section .left .contact-down > div p {
-    font-size: 12px;
+          .card-body {
+            padding: 15px;
+            gap: 25px;
+
+            button {
+              padding: 15px 10px;
+            }
+          }
+        }
+
+        .highlight {
+          scale: 1;
+        }
+      }
+
+      .nav-button {
+        position: absolute;
+        top: 62%;
+        transform: translateY(-50%);
+        width: 50px;
+
+        img {
+          width: 35px;
+          height: 35px;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .prev-button {
+        left: 3px;
+      }
+
+      .next-button {
+        right: 3px;
+      }
+    }
   }
 }

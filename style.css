@@ -62,7 +62,6 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  /* overflow-x: hidden; */
 
   .header {
     width: 100%;
@@ -244,7 +243,7 @@ body {
     > h1 {
       text-align: center;
       color: var(--primary-color);
-      font-weight: 500;
+      font-weight: 800;
       font-size: 40px;
       letter-spacing: 0px;
     }
@@ -257,7 +256,6 @@ body {
       gap: 10px;
 
       .card {
-        min-width: 30%;
         width: 30%;
         height: 100%;
         display: flex;
@@ -267,7 +265,7 @@ body {
         .card-head {
           width: 100%;
           h1 {
-            font-size: 20px;
+            font-size: 25px;
             text-align: center;
           }
         }
@@ -286,14 +284,13 @@ body {
 
           .card-img {
             width: 100%;
-            height: 150px;
+            height: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
 
             img {
               width: 100%;
-              height: 100%;
               object-fit: contain;
               object-position: center;
             }
@@ -302,6 +299,10 @@ body {
           h4 {
             color: var(--primary-color);
             font-weight: 800;
+          }
+
+          .short-text {
+            display: none;
           }
 
           button {
@@ -317,6 +318,7 @@ body {
       .highlight {
         .card-head {
           width: 100%;
+
           h1 {
             font-size: 20px;
             text-align: center;
@@ -327,7 +329,7 @@ body {
         .card-body {
           transform: scale(1.1);
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-          background-color: var(--primary-color);
+          background-color: #daedfc;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
       }
@@ -337,18 +339,22 @@ body {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      padding: 10px;
+      width: 50px;
+
+      img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        object-position: center;
+      }
     }
 
     .prev-button {
-      left: 0;
+      left: 10px;
     }
 
     .next-button {
-      right: 0;
+      right: 10px;
     }
   }
 
@@ -367,7 +373,7 @@ body {
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      gap: 80px;
+      gap: 100px;
 
       .contact-up {
         display: flex;
@@ -425,11 +431,11 @@ body {
 
     .right {
       width: 65%;
-      height: 1 00%;
+      height: 100%;
       margin: 50px 0;
       display: flex;
       flex-direction: column;
-      background-color: rgb(221, 233, 233);
+      background-color: #c8d8e7;
       gap: 25px;
       padding: 25px;
       border-radius: 15px;

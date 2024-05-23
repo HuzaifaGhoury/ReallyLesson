@@ -47,23 +47,38 @@ document.addEventListener("DOMContentLoaded", function () {
   const cards = Array.from(wrapper.children);
   const prevButton = document.querySelector(".prev-button");
   const nextButton = document.querySelector(".next-button");
-  const cardsToShow = 3; // Number of cards to show at a time
-  let currentIndex = 0;
 
-  // Clone cards to handle infinite scrolling
+  let currentIndex = 0;
+  let cardsToShow = 1; // Default to 1 card for small screens
+  let isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
+
+  // Update cardsToShow based on media query
+  function updateCardsToShow() {
+    isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
+    cardsToShow = isSmallScreen ? 1 : 3; // Adapt for different screen sizes
+  }
+
+  // Event listener for media query changes
+  window.addEventListener("resize", updateCardsToShow);
+  updateCardsToShow(); // Call initially to set cardsToShow
+
+  // Clone cards for infinite scrolling (not needed for small screens)
   function cloneCards() {
-    const totalCards = cards.length;
-    for (let i = 0; i < cardsToShow; i++) {
-      const clonePrev = cards[totalCards - 1 - i].cloneNode(true);
-      const cloneNext = cards[i].cloneNode(true);
-      wrapper.insertBefore(clonePrev, wrapper.firstChild);
-      wrapper.appendChild(cloneNext);
+    if (!isSmallScreen) {
+      // Only clone if not small screen
+      const totalCards = cards.length;
+      for (let i = 0; i < cardsToShow; i++) {
+        const clonePrev = cards[totalCards - 1 - i].cloneNode(true);
+        const cloneNext = cards[i].cloneNode(true);
+        wrapper.insertBefore(clonePrev, wrapper.firstChild);
+        wrapper.appendChild(cloneNext);
+      }
     }
   }
 
-  cloneCards();
+  cloneCards(); // Run cloning initially
 
-  // Update visibility to show exactly 3 cards
+  // Update visibility to show the correct number of cards
   function updateVisibility() {
     const allCards = wrapper.children;
 
@@ -73,19 +88,30 @@ document.addEventListener("DOMContentLoaded", function () {
       card.classList.remove("highlight");
     });
 
-    // Show the current set of cards
-    for (let i = currentIndex; i < currentIndex + cardsToShow; i++) {
-      allCards[i].style.display = "flex";
-    }
+    // Show the current card
+    if (isSmallScreen) {
+      // Show only the current card for small screens
+      allCards[currentIndex].style.display = "flex";
+      allCards[currentIndex].classList.add("highlight");
+      allCards[currentIndex].classList.add("single-card");
+    } else {
+      // Show cardsToShow cards for larger screens
+      for (let i = currentIndex; i < currentIndex + cardsToShow; i++) {
+        allCards[i].style.display = "flex";
+      }
 
-    // Highlight the middle card's body
-    allCards[currentIndex + 1].classList.add("highlight");
+      // Highlight the middle card's body (if applicable)
+      if (currentIndex + 1 < allCards.length) {
+        allCards[currentIndex + 1].classList.add("highlight");
+      }
+    }
   }
 
   prevButton.addEventListener("click", () => {
     currentIndex =
       (currentIndex - 1 + wrapper.children.length) % wrapper.children.length;
-    if (currentIndex < cardsToShow) {
+    if (currentIndex < cardsToShow && !isSmallScreen) {
+      // Handle wrapping on larger screens
       currentIndex += cards.length;
     }
     updateVisibility();
@@ -93,7 +119,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   nextButton.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % wrapper.children.length;
-    if (currentIndex >= wrapper.children.length - cardsToShow) {
+    if (
+      currentIndex >= wrapper.children.length - cardsToShow &&
+      !isSmallScreen
+    ) {
+      // Handle wrapping on larger screens
       currentIndex -= cards.length;
     }
     updateVisibility();
@@ -145,48 +175,84 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // GSAP timeline
-  const tl = gsap.timeline({ defaults: { duration: 1, ease: "power1.out" } });
+  // Function to create and trigger animations
+  const createAnimation = (elementSelector, animationFn) => {
+    const element = document.querySelector(elementSelector);
 
-  // Animate header elements
-  tl.from(".header", { y: -100, opacity: 0 })
-    .from(".header .left", { x: -100, opacity: 0 }, "-=0.5")
-    .from(".header .right", { x: 100, opacity: 0 }, "-=0.5");
+    if (!element) return;
 
-  // Animate hero section text and image
-  tl.from(
-    ".hero-section .hero-text .title",
-    { y: 50, opacity: 0, stagger: 0.2 },
-    "-=0.5"
-  )
-    .from(".hero-section .hero-img", { scale: 0.5, opacity: 0 }, "-=0.5")
-    .from(".hero-section .hero-para", { y: 50, opacity: 0 }, "-=0.5");
+    // Create a GSAP timeline for the element but pause it initially
+    const tl = gsap.timeline({
+      defaults: { duration: 1, ease: "power1.out" },
+      paused: true,
+    });
 
-  // Animate packages section title and cards
-  tl.from(".packages-section .title", { y: 50, opacity: 0 }, "-=0.5").from(
-    ".packages-section .card",
-    { y: 50, opacity: 0, stagger: 0.2 },
-    "-=0.5"
-  );
+    // Apply the animation function to the timeline
+    animationFn(tl);
 
-  // Animate contact section form elements
-  tl.from(
-    ".contact-section .left .contact-up",
-    { x: -100, opacity: 0 },
-    "-=0.5"
-  )
-    .from(
-      ".contact-section .left .contact-down",
-      { x: -100, opacity: 0 },
-      "-=0.5"
-    )
-    .from(".contact-section .right .form-head", { x: 100, opacity: 0 }, "-=0.5")
-    .from(
-      ".contact-section .right .form div",
+    // Intersection Observer to trigger animations when in view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            tl.play();
+            observer.unobserve(entry.target); // Stop observing once animation starts
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(element);
+  };
+
+  // Define animations for each section
+  const heroAnimations = (tl) => {
+    tl.from(
+      ".hero-section .hero-text .title",
       { y: 50, opacity: 0, stagger: 0.2 },
       "-=0.5"
     )
-    .from(".contact-section .right button", { y: 50, opacity: 0 }, "-=0.5");
+      .from(".hero-section .hero-img", { scale: 0.5, opacity: 0 }, "-=0.5")
+      .from(".hero-section .hero-para", { y: 50, opacity: 0 }, "-=0.5");
+  };
+
+  const packagesAnimations = (tl) => {
+    tl.from(".packages-section .title", { y: 50, opacity: 0 }, "-=0.5").from(
+      ".packages-section .card",
+      { y: 50, opacity: 0, stagger: 0.2 },
+      "-=0.5"
+    );
+  };
+
+  const contactAnimations = (tl) => {
+    tl.from(
+      ".contact-section .left .contact-up",
+      { x: -100, opacity: 0 },
+      "-=0.5"
+    )
+      .from(
+        ".contact-section .left .contact-down",
+        { x: -100, opacity: 0 },
+        "-=0.5"
+      )
+      .from(
+        ".contact-section .right .form-head",
+        { x: 100, opacity: 0 },
+        "-=0.5"
+      )
+      .from(
+        ".contact-section .right .form div",
+        { y: 50, opacity: 0, stagger: 0.2 },
+        "-=0.5"
+      )
+      .from(".contact-section .right button", { y: 50, opacity: 0 }, "-=0.5");
+  };
+
+  // Create animations for each section
+  createAnimation(".hero-section", heroAnimations);
+  createAnimation(".packages-section", packagesAnimations);
+  createAnimation(".contact-section", contactAnimations);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
