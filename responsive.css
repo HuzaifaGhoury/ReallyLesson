@@ -502,6 +502,31 @@
         }
       }
     }
+
+    .footer {
+      .left {
+        gap: 10px;
+
+        h3 {
+          width: 250px;
+          height: 40px;
+          font-weight: 400;
+        }
+
+        > div {
+          gap: 5px;
+
+          i {
+            font-size: 20px;
+            padding: 5px;
+          }
+        }
+      }
+
+      .footer-right {
+        width: 30%;
+      }
+    }
   }
 }
 
@@ -740,6 +765,32 @@
         }
       }
     }
+
+    .footer {
+      .left {
+        gap: 8px;
+
+        h3 {
+          width: 200px;
+          height: 35px;
+          font-size: 1rem;
+        }
+
+        > div {
+          gap: 5px;
+
+          i {
+            font-size: 16px;
+            padding: 5px;
+          }
+        }
+      }
+
+      .footer-right {
+        padding: 0;
+        width: 30%;
+      }
+    }
   }
 }
 
@@ -775,7 +826,7 @@
         }
 
         #menutoggle span {
-          width: 20px;
+          width: 21px;
           height: 3px;
           margin-bottom: 4px;
           transform-origin: -2px 1px;
@@ -872,14 +923,21 @@
     .packages-section {
       padding: 20px 5px;
 
+      > h1 {
+        font-size: 35px;
+        letter-spacing: normal;
+      }
+
       .package-wrapper {
         .single-card {
           padding: 20px;
+          padding-top: 0;
           gap: 35px;
 
           .card-head {
             h1 {
-              font-size: 25px;
+              font-size: 20px;
+              font-weight: normal;
             }
           }
 
@@ -887,8 +945,16 @@
             padding: 15px;
             gap: 25px;
 
+            .card-img {
+              height: 40%;
+            }
+
             button {
               padding: 15px 10px;
+            }
+
+            p {
+              font-size: 10px;
             }
           }
         }
@@ -899,16 +965,11 @@
       }
 
       .nav-button {
-        position: absolute;
-        top: 62%;
-        transform: translateY(-50%);
-        width: 50px;
+        top: 50%;
 
         img {
-          width: 35px;
-          height: 35px;
-          object-fit: cover;
-          object-position: center;
+          width: 30px;
+          height: 30px;
         }
       }
 
@@ -922,39 +983,40 @@
     }
 
     .contact-section {
-      padding: 10px 10px;
+      padding: 10px 15px;
+      padding-top: 0;
 
       .left {
         padding: 0 7px 10px 7px;
+        gap: 0px;
 
         .contact-up {
           gap: 15px;
 
-          > h1 {
-            font-size: 25px;
-          }
+          font-size: 12px;
 
-          > div {
-            h1 {
-              /* font-size: 30px; */
-            }
+          i {
+            font-size: 20px;
           }
         }
 
         .contact-down {
-          flex-direction: column;
           margin-bottom: 20px;
           gap: 20px;
 
           > h1 {
-            font-size: 25px;
+            font-size: 35px;
           }
 
           > div {
-            gap: 1px;
+            gap: 0.5px;
+
+            h4 {
+              font-size: 14px;
+            }
 
             p {
-              color: #000;
+              font-size: 12px;
             }
           }
         }
@@ -964,8 +1026,8 @@
         width: 100%;
         margin-top: 5px;
         gap: 25px;
-        padding: 15px 7px;
-        border-radius: 8px;
+        padding: 15px 15px;
+        border-radius: 10px;
 
         .form-head {
           h1 {
@@ -979,13 +1041,12 @@
           > div {
             label {
               font-weight: 400;
-              font-size: 16px;
-              line-height: 12px;
+              font-size: 14px;
             }
 
             input,
             textarea {
-              border-radius: 3px;
+              border-radius: 5px;
               padding: 0;
             }
 
@@ -996,10 +1057,40 @@
 
           > button {
             align-self: center;
-            width: 80%;
+            width: 100%;
             font-size: 14px;
           }
         }
+      }
+    }
+
+    .footer {
+      padding: 10px 0;
+      height: 60px;
+
+      .left {
+        width: 100%;
+        gap: 6px;
+        justify-content: space-between;
+
+        h3 {
+          width: 60%;
+          height: 30px;
+          font-size: 1rem;
+        }
+
+        > div {
+          gap: 3px;
+
+          i {
+            font-size: 14px;
+            padding: 4px;
+          }
+        }
+      }
+
+      .footer-right {
+        display: none;
       }
     }
   }
